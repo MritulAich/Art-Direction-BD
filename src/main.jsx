@@ -8,10 +8,12 @@ import {
 import Root from './routes/Root.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 import Home from './Home.jsx';
-import Packages from './component/Packages.jsx';
 import Gallery from './component/Gallery.jsx';
 import Blogs from './component/Blogs.jsx';
 import Contact from './component/Contact.jsx';
+import Packages from './component/packages/Packages.jsx';
+import Photography from './component/packages/Photography.jsx';
+import Cinematography from './component/packages/Cinematography.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: '/packages',
         element: <Packages></Packages>
+      },
+      {
+        path: '/photography',
+        element: <Photography></Photography>
+      },
+      {
+        path: '/cinematography',
+        element: <Cinematography></Cinematography>
       },
       {
         path: '/gallery',

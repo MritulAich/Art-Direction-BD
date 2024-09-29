@@ -35,7 +35,7 @@ const Banner = () => {
                         backgroundPosition: 'center'
                     }} >
 
-                    <h1 className='absolute lg:ml-[22%] md:ml-[22%] ml-[8%] mt-[24%] lg:mt-[8%] md:mt-[8%] lg:text-5xl md:text-3xl text-2xl text-yellow-100'>COLORFUL PHOTOS FOR COLORFUL PEOPLE</h1>
+                    <h1 className='absolute lg:ml-[22%] md:ml-[22%] ml-[8%] mt-[24%] lg:mt-[8%] md:mt-[8%] lg:text-5xl md:text-3xl text-2xl poppins-regular text-yellow-100'>COLORFUL PHOTOS FOR COLORFUL PEOPLE</h1>
                 </SwiperSlide>
 
                 <SwiperSlide className='w-full carousel-item bg-contain bg-no-repeat'
