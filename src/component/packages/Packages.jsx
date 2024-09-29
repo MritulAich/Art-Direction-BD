@@ -40,7 +40,7 @@ const Packages = () => {
                             <LiaPhotoVideoSolid className="text-4xl text-white" />
                             <h2 class="text-xl font-semibold text-white">Combo</h2>
                             <p>Crafting Visual Masterpieces</p>
-                            <Link to='' class="btn btn-warning">More</Link>
+                            <Link to='/comboPackages' class="btn btn-warning">More</Link>
                         </div>
                     </div>
                 </div>

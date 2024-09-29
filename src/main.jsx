@@ -14,6 +14,7 @@ import Contact from './component/Contact.jsx';
 import Packages from './component/packages/Packages.jsx';
 import Photography from './component/packages/Photography.jsx';
 import Cinematography from './component/packages/Cinematography.jsx';
+import ComboPackages from './component/packages/ComboPackages.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/cinematography',
         element: <Cinematography></Cinematography>
+      },
+      {
+        path: '/comboPackages',
+        element: <ComboPackages></ComboPackages>
       },
       {
         path: '/gallery',
