@@ -50,3 +50,16 @@ const Packages = () => {
 };
 
 export default Packages;
+
+
+// Combo Packages
+// A perfect blend of photography and cinematography for your special moments
+
+// Standard Packages
+// Get both photography and cinematography in our Standard package range with unbeatable quality.
+
+// Premium Packages
+// Step up to our Premium packages for top-tier services, including drone pilots and top-tier cinematographers.
+
+// Signature Packages
+// Our exclusive Signature package features the highest level of personal involvement from our founding team.

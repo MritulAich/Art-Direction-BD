@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 const Photography = () => {
     return (
         <div className="min-h-screen bg-gray-200 p-6 pt-20">
-            <h1 className="text-4xl text-center font-semibold mb-12">Photography Packages</h1>
-
+            <div className="mb-12 text-center poppins-regular-italic">
+            <h1 className="text-4xl font-semibold">Photography Packages</h1>
+            <p>Preserve your cherished moments with our professional photographers.</p>
+            </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
                 <div className="w-full p-6 bg-white border rounded-lg shadow-lg flex flex-col items-center transition transform duration-700 ease-in opacity-0 delay-200 first-card">

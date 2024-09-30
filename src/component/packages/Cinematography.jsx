@@ -47,7 +47,7 @@ const Cinematography = () => {
                 </div>
 
 
-                <div className="bg-white bg-opacity-10 border rounded-lg p-6 text-center shadow-lg md:col-span-2 lg:col-span-1 third-card transition transform duration-700 ease-in opacity-0 delay-900">
+                <div className="bg-white bg-opacity-10 border rounded-lg p-6 text-center shadow-lg md:col-span-2 lg:col-span-1 third-card transition transform duration-700 ease-in opacity-0 delay-300">
                     <h2 className="text-2xl font-semibold text-white mb-12 underline">Premium</h2>
                     <div className="flex flex-row items-center gap-6">
                         <div className="text-5xl mb-4 text-white w-28">
