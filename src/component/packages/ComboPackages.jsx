@@ -76,7 +76,7 @@ const ComboPackages = () => {
                     <TabPanel>
                         <div className="grid md:grid-cols-2 gap-6">
 
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md first-card transition transform duration-700 ease-in opacity-0 delay-300">
+                            <div className="bg-gray-100 p-6 rounded-lg shadow-md first-card transition transform duration-700 ease-in opacity-0 delay-600">
                                 <h3 className="text-2xl font-bold mb-4">Elite</h3>
                                 <ul className="list-disc pl-5 text-lg">
                                     <li>📷 2 Lead Photographers</li>
@@ -115,7 +115,7 @@ const ComboPackages = () => {
                     <TabPanel>
                         <div className="grid md:grid-cols-2 gap-6">
 
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md first-card transition transform duration-700 ease-in opacity-0 delay-300">
+                            <div className="bg-gray-100 p-6 rounded-lg shadow-md first-card transition transform duration-700 ease-in opacity-0 delay-600">
                                 <h3 className="text-2xl font-bold mb-4">Prestige</h3>
                                 <ul className="list-disc pl-5 text-lg">
                                     <li>📷 1 Photographer (CEO), 1 Photographer (Co-Founder), 1 Senior Photographer</li>
