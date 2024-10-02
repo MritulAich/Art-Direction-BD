@@ -16,6 +16,9 @@ import Cinematography from './component/packages/Cinematography.jsx';
 import ComboPackages from './component/packages/ComboPackages.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Booking from './component/Booking.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import SignUp from './pages/SignUp.jsx';
+import Login from './pages/Login.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -53,6 +56,14 @@ const router = createBrowserRouter([
         element: <Booking></Booking>
       },
       {
+        path: '/signUp',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
         path: '/contact',
         element: <Contact></Contact>
       }
@@ -62,8 +73,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </AuthProvider>
   </StrictMode>,
 )

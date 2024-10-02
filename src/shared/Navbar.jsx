@@ -40,7 +40,9 @@ const Navbar = () => {
                     {Navlinks}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-3 lg:mr-8 md:mr-6 mr-2">
+                <button className="btn btn-primary btn-outline"><Link to='/login'>Login</Link></button>
+                <button className="btn btn-primary btn-outline"><Link to='/signUp'>Sign Up</Link></button>
             </div>
         </div>
     );
