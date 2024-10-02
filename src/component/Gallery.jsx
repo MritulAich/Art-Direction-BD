@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { Zoom } from "yet-another-react-lightbox/plugins";
+
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -8,6 +12,7 @@ const Gallery = () => {
             .then(data => setImages(data))
     }, []);
 
+    // search function
     const [searchQuery, setSearchQuery] = useState('');
     useEffect(() => {
         const fetchImages = async () => {
@@ -27,10 +32,19 @@ const Gallery = () => {
         setSearchQuery(event.target.value);
     };
 
+    // lightbox
+    const [open, setOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
     
+    const openLightbox = (index) => {
+        setCurrentIndex(index);
+        setOpen(true);
+    };
+
+
     return (
             <div>
-                <h2 className="text-2xl divider italic text-center my-8">Photographs</h2>
+                <h2 className="text-3xl divider italic text-center my-8">Photographs</h2>
                 <label className="input input-bordered flex items-center w-[400px] gap-2 my-6 mx-auto ml-12">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -51,20 +65,39 @@ const Gallery = () => {
                     />
                 </label>
                 
+                
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-8 md:gap-6 lg:m-12 md:m-8 m-2 ">
                 {
-                    images.slice(0,16).map(image =>
-                        <div key={image._id} className="">
-                            <img src={image.url} className="lg:w-[400px] lg:h-[350px] md:w-[400px] md:h-[300px] w-[360px] h-[280px]" alt="not found" />
+                    images.slice(0,16).map((image, index) =>
+                        <div key={image._id}>
+                            <img 
+                                src={image.url} className="w-full h-full object-cover" alt="not found"
+                                onClick={()=>openLightbox(index)}
+                                style={{cursor: 'pointer'}}
+                            />
                         </div>)
                 }
+
+                {open && (
+                <Lightbox
+                    open={open}
+                    close={() => setOpen(false)}
+                    slides={images.map(image => ({ src: image.url }))}
+                    index={currentIndex}
+                    onIndexChange={setCurrentIndex}
+                    plugins={[Zoom]}
+                    zoom={{ maxZoomPixelRatio: 3 }}
+                />
+            )}
+
+
                 </div>
                 <h4 className="text-right mr-10 mb-4 lg:-mt-4 md:-mt-4 mt-1">
                     <a className="text-blue-700 text-xl hover:underline" href="https://www.facebook.com/artdirectionbd/photos_by">see more....</a>
                 </h4>
             
                 {/* Films */}
-                <h2 className="text-2xl divider italic text-center mt-20 mb-10">Films</h2>
+                <h2 className="text-3xl divider italic font-medium text-center mt-24 mb-12">Films</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 m-4 gap-8">
                  <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/9CrgdAjeuto?si=PRBpG_lLGgix7g0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                  <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/oYeIobciLjQ?si=do6CHQPvdYgsLQHu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>               
