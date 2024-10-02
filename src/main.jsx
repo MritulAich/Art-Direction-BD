@@ -15,14 +15,17 @@ import Packages from './component/packages/Packages.jsx';
 import Photography from './component/packages/Photography.jsx';
 import Cinematography from './component/packages/Cinematography.jsx';
 import ComboPackages from './component/packages/ComboPackages.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
-        path:'/',
+        path: '/',
         element: <Home></Home>
       },
       {
@@ -59,6 +62,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>,
 )
