@@ -29,10 +29,9 @@ const Gallery = () => {
 
     
     return (
-        <div>
             <div>
-                <h2 className="text-2xl divider italic text-center my-6">Photographs</h2>
-                <label className="input input-bordered flex items-center w-[400px] gap-2 my-6 mx-auto ml-6">
+                <h2 className="text-2xl divider italic text-center my-8">Photographs</h2>
+                <label className="input input-bordered flex items-center w-[400px] gap-2 my-6 mx-auto ml-12">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 16 16"
@@ -47,21 +46,32 @@ const Gallery = () => {
                         type="text"
                         value={searchQuery}
                         onChange={handleSearch}
-                        placeholder="ex. Wedding, Engagement, Birthday, Boishakh"
+                        placeholder="ex. Wedding, Engagement, Birthday, Boishakh,"
                         className="w-full"
                     />
                 </label>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-8 md:gap-6 lg:m-12 md:m-8 m-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-8 md:gap-6 lg:m-12 md:m-8 m-2 ">
                 {
-                    images.slice(0,12).map(image =>
+                    images.slice(0,16).map(image =>
                         <div key={image._id} className="">
                             <img src={image.url} className="lg:w-[400px] lg:h-[350px] md:w-[400px] md:h-[300px] w-[360px] h-[280px]" alt="not found" />
                         </div>)
                 }
                 </div>
+                <h4 className="text-right mr-10 mb-4 lg:-mt-4 md:-mt-4 mt-1">
+                    <a className="text-blue-700 text-xl hover:underline" href="https://www.facebook.com/artdirectionbd/photos_by">see more....</a>
+                </h4>
+            
+                {/* Films */}
+                <h2 className="text-2xl divider italic text-center mt-20 mb-10">Films</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 m-4 gap-8">
+                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/9CrgdAjeuto?si=PRBpG_lLGgix7g0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/oYeIobciLjQ?si=do6CHQPvdYgsLQHu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>               
+                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/sx00dlkf_TY?si=1HfqrK9NSQn02ljm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/t6yEyyrpfvI?si=cMUP25iyDmvPWGCN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
             </div>
-        </div>
     );
 };
 
@@ -117,4 +127,26 @@ export default Gallery;
 //     { "_id": "43", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727715213/459235907_1053253530143433_5823483010250925748_n.jpg_bsoeu3.jpg", "eventType": "boishakh" },
 //     { "_id": "44", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727714911/425744476_891420519660069_6419823856379189509_n.jpg_nd9ke0.jpg", "eventType": "engagement" },
 //     { "_id": "45", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727603768/58383972_1666265593517392_639675768888098816_n.jpg_kgaubx.jpg", "eventType": "wedding" },
+   
+  
+   
+//     { "_id": "46", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727843548/447051873_977993011002819_5182732859218591886_n.jpg_hhuldj.jpg", "eventType": "wedding" },
+//     { "_id": "47", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727843647/420072298_875685557900232_6008270506895806307_n.jpg_wvjlfz.jpg", "eventType": "wedding" },
+//     { "_id": "48", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727843705/407209399_844876214314500_1002989667595311556_n.jpg_xh2h4q.jpg", "eventType": "wedding" },
+//     { "_id": "49", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727843725/406539169_844880900980698_7153283147008806678_n.jpg_pqscjw.jpg", "eventType": "wedding" },
+
+//     { "_id": "50", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727850058/456509651_1052888389532359_3437433662336052822_n.jpg_ase18o.jpg", "eventType": "birthday" },
+//     { "_id": "51", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727850302/56544708_1218950958272644_8975516401984864256_n.jpg_sq13lb.jpg", "eventType": "birthday" },
+//     { "_id": "52", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727850355/56757411_1218951668272573_2880396143202664448_n.jpg_yidfrp.jpg", "eventType": "birthday" },
+//     { "_id": "53", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727850371/56604978_1218951334939273_6833343111679180800_n.jpg_ogpo4w.jpg", "eventType": "birthday" },
+
+//     { "_id": "54", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727853041/50636599_1589407187869900_7377038095352332288_n.jpg_qzbwnd.jpg", "eventType": "engagement" },
+//     { "_id": "55", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727853096/51041752_1589407717869847_7194247074668347392_n.jpg_z6qe7z.jpg", "eventType": "engagement" },
+//     { "_id": "56", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727853234/456304911_1037698958365557_5048722603677961123_n.jpg_kdbdgg.jpg", "eventType": "engagement" },
+//     { "_id": "57", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727853286/450936849_1007331014735685_4638337904707046079_n.jpg_egum9o.jpg", "eventType": "engagement" },
+
+//     { "_id": "58", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727852458/web-boishakh-mehedi-1555214976844.jpg_qkr7sq.jpg", "eventType": "boishakh" },
+//     { "_id": "59", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727852669/25756341a0a2bf5dc5d80a2eab25f0de_agwgfd.jpg", "eventType": "boishakh" },
+//     { "_id": "60", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727852786/17155843111_48b87eb984_c_bxxwza.jpg", "eventType": "boishakh" },
+//     { "_id": "61", "url": "https://res.cloudinary.com/dvaclg6kh/image/upload/v1727852922/16968634258_0108e2a533_b_qpveuc.jpg", "eventType": "boishakh" }
 // ]
