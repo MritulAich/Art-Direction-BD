@@ -1,5 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { Link } from "react-router-dom";
 
 const ComboPackages = () => {
     return (
@@ -34,7 +35,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-blue-600">BDT 13,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
 
@@ -50,7 +51,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-blue-600">BDT 16,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
 
@@ -66,7 +67,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-blue-600">BDT 19,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +89,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-yellow-500">BDT 20,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
 
@@ -105,7 +106,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-yellow-500">BDT 24,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +128,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-yellow-500">BDT 30,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
 
@@ -144,7 +145,7 @@ const ComboPackages = () => {
                                 </ul>
                                 <div className="flex flex-row justify-between">
                                     <p className="text-2xl font-bold mt-4 text-yellow-500">BDT 42,500/-</p>
-                                    <button className="btn btn-warning">Book Now</button>
+                                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                                 </div>
                             </div>
                         </div>

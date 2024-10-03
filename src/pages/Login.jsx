@@ -3,9 +3,10 @@ import { AuthContext } from '../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const notify = () => toast.error('Sorry! Infos are not matching');
 
     const { signIn, signInWithGoogle } = useContext(AuthContext);
@@ -26,6 +27,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 toast('You have logged in successfully');
+                navigate('/booking');
             }
             )
             .catch(err => { notify() })
@@ -39,7 +41,7 @@ const Login = () => {
             </Helmet>
 
             <div className="flex flex-col justify-center items-center my-16">
-                <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-100 text-gray-800">
+                <div className="w-full max-w-md lg:max-w-lg p-4 rounded-md shadow sm:p-8 bg-gray-100 text-gray-800">
                     <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
                     <p className="text-center text-gray-600">Don't have an account?
                         <a href="/signUp" rel="noopener noreferrer" className="focus:underline hover:underline font-semibold"> Sign up here</a>

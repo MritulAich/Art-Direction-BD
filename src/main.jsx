@@ -19,6 +19,7 @@ import Booking from './component/Booking.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import SignUp from './pages/SignUp.jsx';
 import Login from './pages/Login.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -53,6 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/booking',
+        // element: <PrivateRoute><Booking></Booking></PrivateRoute>
         element: <Booking></Booking>
       },
       {

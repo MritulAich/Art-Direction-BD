@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 
 const SignUp = () => {
 
+    const navigate = useNavigate();
     const { createUser } = useContext(AuthContext);
 
     const handleRegister = e => {
@@ -23,7 +24,10 @@ const SignUp = () => {
 
 
         createUser(email, password)
-            .then(res => { console.log(res.user) })
+            .then(res => { 
+                console.log(res.user);
+                navigate('/booking');
+            })
             .catch(err => { console.log(err) })
     }
 
@@ -35,7 +39,7 @@ const SignUp = () => {
             </Helmet>
         
         <div className="flex flex-col justify-center items-center my-16">
-            <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-50 text-gray-800">
+            <div className="w-full max-w-md lg:max-w-lg p-4 rounded-md shadow sm:p-8 bg-gray-50 text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Registration</h2>
 
                 <form onSubmit={handleRegister}>

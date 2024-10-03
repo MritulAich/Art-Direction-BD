@@ -18,7 +18,7 @@ const Photography = () => {
                         <li className="mb-2">📦 Delivery of Raw + <span className="font-semibold">100</span> special edited pictures via Google Drive.</li>
                     </ul>
                     <p className="text-xl font-bold text-gray-700 mb-6">BDT 5,500/-</p>
-                    <Link className="btn btn-warning">Book Now</Link>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
 
                 <div className="w-full p-6 bg-gray-100 border rounded-lg shadow-lg flex flex-col items-center transition transform duration-700 ease-in opacity-0 delay-600 second-card">
@@ -30,7 +30,7 @@ const Photography = () => {
                         <li className="mb-2">📦 Delivery of Raw + <span className="font-semibold">200</span> special edited pictures via Google Drive.</li>
                     </ul>
                     <p className="text-xl font-bold text-gray-700 mb-6">BDT 8,500/-</p>
-                    <Link className="btn btn-warning">Book Now</Link>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
 
                 <div className="w-full p-6 bg-gray-100 border rounded-lg shadow-lg flex flex-col items-center transition transform duration-700 ease-in opacity-0 delay-900 third-card md:col-span-2 lg:col-span-1 md:mx-auto">
@@ -42,7 +42,7 @@ const Photography = () => {
                         <li className="mb-2">📦 Delivery of Raw + <span className="font-semibold">300</span> special edited pictures via PenDrive.</li>
                     </ul>
                     <p className="text-xl font-bold text-gray-700 mb-6">BDT 13,500/-</p>
-                    <Link className="btn btn-warning">Book Now</Link>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
             </div>
         </div>

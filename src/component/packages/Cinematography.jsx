@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Cinematography = () => {
     return (
@@ -24,12 +25,12 @@ const Cinematography = () => {
                         </div>
                     </div>
                     <p className="text-lg mb-3 font-semibold text-yellow-500">BDT 5,500/-</p>
-                    <button className="btn btn-warning">Book Now</button>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
 
 
                 <div className="bg-white bg-opacity-10 border rounded-lg p-6 text-center shadow-lg second-card transition transform duration-700 ease-in opacity-0 delay-600">
-                    <h2 className="text-2xl font-semibold text-white mb-12 underline">Secondary</h2>
+                    <h2 className="text-2xl font-semibold text-white mb-12 underline">Standard</h2>
                     <div className="flex flex-row items-center gap-6">
                         <div className="text-5xl mb-4 text-white w-28">
                             <img src="/public/videography2.png" alt="" />
@@ -43,7 +44,7 @@ const Cinematography = () => {
                         </div>
                     </div>
                     <p className="text-lg mb-3 font-semibold text-yellow-500">BDT 10,500/-</p>
-                    <button className="btn btn-warning">Book Now</button>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
 
 
@@ -62,7 +63,7 @@ const Cinematography = () => {
                         </div>
                     </div>
                     <p className="text-lg mb-3 font-semibold text-yellow-500">BDT 16,500/-</p>
-                    <button className="btn btn-warning">Book Now</button>
+                    <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
             </div>
         </div>
