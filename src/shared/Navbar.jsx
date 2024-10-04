@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { CiLogin, CiLogout } from "react-icons/ci";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const Navbar = () => {
 
     const Navlinks = <>
         <li><Link to='/gallery'>Gallery</Link></li>
-        <li><Link to='/packages'>Packages</Link></li>
+        <li><Link to='/services'>Services</Link></li>
         <li><Link to='/booking'>Booking</Link></li>
         <li><Link to='/contact'>Contact Us</Link></li>
     </>
@@ -52,7 +53,9 @@ const Navbar = () => {
 
             <div className="navbar-end gap-3 lg:mr-8 md:mr-6 mr-2">
                 {user ?
+                    <div className="flex flex-col lg:flex-row md:flex-row gap-3 items-center"><Link to='/clientPortal' className="btn bg-[bisque] tooltip tooltip-left text-2xl text-blue-800 pt-2" data-tip='Client Portal'><CgProfile /></Link>
                     <button className="btn btn-outline" onClick={handleLogOut}>Logout<CiLogout /></button>
+                    </div>
                     :
                     <Link to='/login'><button className="btn btn-primary btn-outline">Login<CiLogin /></button></Link>
                 }

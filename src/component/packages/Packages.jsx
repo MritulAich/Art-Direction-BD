@@ -3,7 +3,7 @@ import { ImVideoCamera } from "react-icons/im";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
-const Packages = () => {
+const Services = () => {
     return (
         <div
             className="hero min-h-screen"
@@ -49,4 +49,4 @@ const Packages = () => {
     );
 };
 
-export default Packages;
+export default Services;

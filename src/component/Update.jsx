@@ -1,12 +1,10 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Booking = () => {
-  const {user} = useContext(AuthContext);
-  console.log(user);
+const Update = () => {
 
-  const [selectedService, setSelectedService] = useState('');
+    const [selectedService, setSelectedService] = useState('');
   const [selectedComboPackage, setSelectedComboPackage] = useState('');
 
   const handleServiceChange = (event) => {
@@ -17,18 +15,18 @@ const Booking = () => {
     setSelectedComboPackage(event.target.value);
   };
 
+    const booking = useLoaderData();
+    const {_id, phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType} = booking;
 
-  const handleBookingForm = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
-    const date = form.date.value;
-    const time = form.time.value;
-    const service = form.service.value;
-
-    let photographyPackage = '';
+    const handleUpdatePage = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const phone = form.phone.value;
+        const date = form.date.value;
+        const time = form.time.value;
+        const service = form.service.value;
+        
+        let photographyPackage = '';
     let cinematographyPackage = '';
     let comboPackage = '';
     let standardType = '';
@@ -49,90 +47,62 @@ const Booking = () => {
         signatureType = form.signatureType.value;
       }
     }
-    const bookedInfo = {
-      name, email, phone, date, time, service, photographyPackage, cinematographyPackage,
-      comboPackage, standardType, premiumType, signatureType
-    }
-    console.log(bookedInfo);
 
-    fetch('http://localhost:5000/booking',{
-      method: 'POST',
-      headers: {
-        'content-type' : 'application/json'
-      },
-      body: JSON.stringify(bookedInfo)
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      if (data.insertedId) {
-        Swal.fire({
-            title: 'Success',
-            text: 'You have booked successfully',
-            icon: 'success',
-            confirmButtonText: 'Done'
+        const updatedPage = {phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType};
+
+        fetch(`http://localhost:5000/booking/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedPage)
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'This booking updated successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Done'
+                    })
+                }
+            })
     }
-    })
-  }
 
-  
-  return (
-    <div>
-      <div className="text-center mt-14">
-        <h3 className="lg:text-xl text-lg type-writer ">We Offer You Best Service In Best Price. You Have The Opportunity To Customize The Packages As You Want.</h3>
-      </div>
 
+    return (
+        <div>
       <div className="max-w-md lg:max-w-lg md:max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold">BOOK A SHOOT</div>
+        <div className="text-2xl py-4 px-6 bg-gray-800 text-white text-center font-bold">Update Booking</div>
 
-        <form onSubmit={handleBookingForm} className="py-4 px-6">
+        <form onSubmit={handleUpdatePage} className="py-4 px-6">
 
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Name
-            </label>
+            <label className="block text-gray-700 font-bold mb-2">Phone Number</label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="name" disabled defaultValue={user?.displayName} required />
+              name="phone" type="number" defaultValue={phone} required />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Email
-            </label>
+            <label className="block text-gray-700 font-bold mb-2">Date</label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="email" disabled defaultValue={user?.email} required />
+              name="date" type="date" defaultValue={date} required />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Phone Number
-            </label>
+            <label className="block text-gray-700 font-bold mb-2">Time</label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="phone" type="number" placeholder="Enter your phone number" required />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Date
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="date" type="date" placeholder="Select a date" required />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Time
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="time" type="time" placeholder="Select a time" />
+              name="time" type="time" defaultValue={time} />
           </div>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">Service</label>
             <select
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="service" onChange={handleServiceChange} required
+              name="service" defaultValue={service} onChange={handleServiceChange} required
             >
               <option value="">Select a service</option>
               <option value="photography">Photography</option>
@@ -149,7 +119,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Photography Package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="photographyPackage" name="photographyPackage"
+                id="photographyPackage" name="photographyPackage" defaultValue={photographyPackage}
               >
                 <option value="primary">Primary</option>
                 <option value="standard">Standard</option>
@@ -164,7 +134,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Cinematography Package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="cinematographyPackage" name="cinematographyPackage"
+                id="cinematographyPackage" name="cinematographyPackage" defaultValue={cinematographyPackage}
               >
                 <option value="primary">Primary</option>
                 <option value="standard">Standard</option>
@@ -179,7 +149,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Combo Package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="comboPackage" name="comboPackage" onChange={handleComboPackageChange}
+                id="comboPackage" name="comboPackage" onChange={handleComboPackageChange} defaultValue={comboPackage}
               >
                 <option value="">Select a combo package</option>
                 <option value="standard">Standard</option>
@@ -196,7 +166,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Standard sub-package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="standardType" name="standardType"
+                id="standardType" name="standardType" defaultValue={standardType}
               >
                 <option value="classic">Classic</option>
                 <option value="traditional">Traditional</option>
@@ -211,7 +181,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Premium sub-package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="premiumType" name="premiumType"
+                id="premiumType" name="premiumType" defaultValue={premiumType}
               >
                 <option value="elite">Elite</option>
                 <option value="unique">Unique</option>
@@ -225,7 +195,7 @@ const Booking = () => {
               <label className="block text-gray-700 font-bold mb-2">Select Signature sub-package</label>
               <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="signatureType" name="signatureType"
+                id="signatureType" name="signatureType" defaultValue={signatureType}
               >
                 <option value="prestige">Prestige</option>
                 <option value="supreme">Supreme</option>
@@ -233,14 +203,6 @@ const Booking = () => {
             </div>
           )}
 
-
-
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Message</label>
-            <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="message" rows="4" placeholder="Enter any additional information"></textarea>
-          </div>
 
           <div className="flex items-center justify-center mb-4">
             <button
@@ -250,7 +212,7 @@ const Booking = () => {
 
       </div>
     </div>
-  );
+    );
 };
 
-export default Booking;
+export default Update;

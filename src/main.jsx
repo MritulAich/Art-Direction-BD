@@ -10,7 +10,6 @@ import ErrorPage from './routes/ErrorPage.jsx';
 import Home from './Home.jsx';
 import Gallery from './component/Gallery.jsx';
 import Contact from './component/Contact.jsx';
-import Packages from './component/packages/Packages.jsx';
 import Photography from './component/packages/Photography.jsx';
 import Cinematography from './component/packages/Cinematography.jsx';
 import ComboPackages from './component/packages/ComboPackages.jsx';
@@ -20,6 +19,9 @@ import AuthProvider from './provider/AuthProvider.jsx';
 import SignUp from './pages/SignUp.jsx';
 import Login from './pages/Login.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import ClientPortal from './component/ClientPortal.jsx';
+import Services from './component/packages/Packages.jsx';
+import Update from './component/Update.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -33,8 +35,8 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/packages',
-        element: <Packages></Packages>
+        path: '/services',
+        element: <Services></Services>
       },
       {
         path: '/photography',
@@ -64,6 +66,15 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path:'/clientPortal',
+        element:<ClientPortal></ClientPortal>
+      },
+      {
+        path:'/update/:id',
+        element:<Update></Update>,
+        loader: ({params})=>fetch(`http://localhost:5000/booking/${params.id}`)
       },
       {
         path: '/contact',
