@@ -12,7 +12,10 @@ const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const handleGoogle = () => {
         signInWithGoogle()
-            .then(res => { console.log(res.user) })
+            .then(res => { 
+                console.log(res.user);
+                navigate('/booking');
+            })
             .catch(err => { console.log(err) })
     }
 

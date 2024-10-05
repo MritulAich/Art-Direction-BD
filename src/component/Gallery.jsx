@@ -98,7 +98,7 @@ const Gallery = () => {
             
                 {/* Films */}
                 <h2 className="text-3xl divider italic font-medium text-center mt-24 mb-12">Films</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 m-4 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 m-4 mb-24 gap-8">
                  <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/9CrgdAjeuto?si=PRBpG_lLGgix7g0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                  <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/oYeIobciLjQ?si=do6CHQPvdYgsLQHu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>               
                  <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/sx00dlkf_TY?si=1HfqrK9NSQn02ljm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>

@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
+  const navigate = useNavigate();
 
   const [selectedService, setSelectedService] = useState('');
   const [selectedComboPackage, setSelectedComboPackage] = useState('');
@@ -142,6 +144,7 @@ const Booking = () => {
             confirmButtonText: 'Done',
             footer: 'Contact us before confirm booking.'
           })
+          navigate('/clientPortal')
         }
       })
   }
@@ -222,6 +225,7 @@ const Booking = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="photographyPackage" name="photographyPackage"
               >
+                <option>Select a photography package</option>
                 <option value="primary">Primary</option>
                 <option value="standard">Standard</option>
                 <option value="premium">Premium</option>
@@ -237,6 +241,7 @@ const Booking = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="cinematographyPackage" name="cinematographyPackage"
               >
+                <option>Select a cinematography package</option>
                 <option value="primary">Primary</option>
                 <option value="standard">Standard</option>
                 <option value="premium">Premium</option>
@@ -269,6 +274,7 @@ const Booking = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="standardType" name="standardType"
               >
+                <option>Select a standard package</option>
                 <option value="classic">Classic</option>
                 <option value="traditional">Traditional</option>
                 <option value="dynamic">Dynamic</option>
@@ -284,6 +290,7 @@ const Booking = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="premiumType" name="premiumType"
               >
+                <option>Select a premium package</option>
                 <option value="elite">Elite</option>
                 <option value="unique">Unique</option>
               </select>
@@ -298,6 +305,7 @@ const Booking = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="signatureType" name="signatureType"
               >
+                <option>Select a signature package</option>
                 <option value="prestige">Prestige</option>
                 <option value="supreme">Supreme</option>
               </select>
@@ -325,6 +333,22 @@ const Booking = () => {
         </form>
 
       </div>
+
+      <div className="divider mt-12"></div>
+            <h1 className="text-3xl ml-5 underline">Add-Ons :</h1>
+            <div className="divider"></div>
+            <ul className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-2 mb-6">
+                <li><p>1. Extra hour cost 1,000/- per person.</p></li>
+                <li><p>2. Extra Photographer or Extra Cinematographer cost 5,000/- per person.</p></li>
+                <li><p>3. Drone cost 5,000/- for 2hours.</p></li>
+                <li><p>4. Pre/Post Wedding Photo-shoot of 2 hours by 1 Senior Photographer cost 5,500/-</p></li>
+                <li><p>5. Pre/Post Wedding Cinematography of 2 hours by 1 Senior Cinematographer cost 6,500/-</p></li>
+                <li><p>6. Premium Photo-book of 10 Pages cost: 3,000/-</p></li>
+                <li><p>7. Premium Photo-book of 12 Pages cost: 3,500/-</p></li>
+                <li><p>8. Premium Photo-book of 15 Pages cost: 4,500/-</p></li>
+                <li><p>9. Premium Photo-book of 20 Pages cost: 6,000/-</p></li>
+                <li><p>10. For outside of Chittagong city area client must provide transport & accommodation of team members.</p></li>
+            </ul>
     </div>
   );
 };

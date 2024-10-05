@@ -20,8 +20,10 @@ import SignUp from './pages/SignUp.jsx';
 import Login from './pages/Login.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import ClientPortal from './component/ClientPortal.jsx';
-import Services from './component/packages/Packages.jsx';
+import Services from './component/packages/Services.jsx';
 import Update from './component/Update.jsx';
+import Terms from './shared/Terms.jsx';
+import ServicePeriod from './shared/ServicePeriod.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -56,8 +58,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/booking',
-        // element: <PrivateRoute><Booking></Booking></PrivateRoute>
-        element: <Booking></Booking>
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>
+        // element: <Booking></Booking>
       },
       {
         path: '/signUp',
@@ -69,7 +71,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/clientPortal',
-        element:<ClientPortal></ClientPortal>
+        element:<PrivateRoute><ClientPortal></ClientPortal></PrivateRoute>
       },
       {
         path:'/update/:id',
@@ -79,6 +81,14 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path: '/terms',
+        element: <Terms></Terms>
+      },
+      {
+        path: '/servicePeriod',
+        element: <ServicePeriod></ServicePeriod>
       }
     ]
   },

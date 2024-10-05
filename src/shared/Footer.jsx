@@ -3,26 +3,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <div className="footer bg-base-300 text-base-content p-10">
-        <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Social</h6>
-          <div className="grid grid-flow-col gap-4">
+      <footer className="footer footer-center bg-neutral-content pb-4 pt-8">
+      <nav className="grid grid-flow-col text-lg gap-4 -mb-12">
             <Link to='https://www.facebook.com/artdirectionbd'>
-            <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -44,16 +28,25 @@ const Footer = () => {
               </svg>
             </Link>
             <Link to='https://www.instagram.com/artdirection_photography_bd/'>
-                <img width="24"
+              <img width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 className="fill-current" src="/public/instagram.png" alt="instagram" />
             </Link>
-          </div>
-        <p className="mt-6">© 2020 Art Direction BD All Rights Reserved </p>
         </nav>
-      </div>
-      </div>
+        <nav className="grid grid-flow-col text-lg gap-4 -mb-14">
+          <Link to='/' className="link link-hover">Home</Link>
+          <Link to='/' className="link link-hover">Why us</Link>
+          <Link to='/servicePeriod' className="link link-hover">Service period</Link>
+          <Link to='/contact' className="link link-hover">Contact</Link>
+          <Link to='/terms' className="link link-hover">Terms & Conditions</Link>
+        </nav>
+        <aside>
+          <p className="mt-6">© 2020 Art Direction BD All Rights Reserved </p>
+          <p>Made by <a className="hover:underline" href="https://www.linkedin.com/in/mritul-aich-developer/">Mritul Aich</a></p>
+        </aside>
+      </footer>
+    </div>
   );
 };
 
