@@ -7,14 +7,16 @@ import Swal from "sweetalert2";
 
 const ClientPortal = () => {
     const { user } = useContext(AuthContext);
-
     const [booking, setBooking] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/booking')
-            .then(res => res.json())
-            .then(data => setBooking(data))
-    }, [])
 
+    useEffect(() => {
+        if (user?.email) {
+            fetch(`http://localhost:5000/booking?email=${user.email}`)
+                .then(res => res.json())
+                .then(data => setBooking(data))
+        }
+    }, [user?.email]);
+    
 
     const handleDelete = _id => {
         Swal.fire({
@@ -27,7 +29,6 @@ const ClientPortal = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 fetch(`http://localhost:5000/booking/${_id}`, {
                     method: 'DELETE'
                 })

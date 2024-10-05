@@ -3,7 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Booking = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   console.log(user);
 
   const [selectedService, setSelectedService] = useState('');
@@ -16,6 +16,76 @@ const Booking = () => {
   const handleComboPackageChange = (event) => {
     setSelectedComboPackage(event.target.value);
   };
+
+
+  const handleCostPhoto = () => {
+    let selectedPackage = document.getElementById('photographyPackage').value;
+    let cost = 0;
+    if(selectedPackage === 'primary'){
+      cost = 5500;
+    }else if(selectedPackage === 'standard'){
+      cost = 8500;
+    }else if(selectedPackage === 'premium'){
+      cost = 13500;
+    }
+    document.getElementById('costBDT').innerHTML = cost
+  }
+
+  const handleCostCinema =()=>{
+    let selectedPackage = document.getElementById('cinematographyPackage').value;
+    let cost = 0;
+
+    if(selectedPackage==='primary'){
+      cost = 5500;
+    }else if(selectedPackage==='standard'){
+      cost = 10500;
+    }else if(selectedPackage==='premium'){
+      cost=16500;
+    }
+
+    document.getElementById('costBDT').innerHTML = cost;
+  }
+
+  const handleCostComboStandard =()=>{
+    let selectedPackage = document.getElementById('standardType').value;
+    let cost = 0;
+
+    if(selectedPackage==='classic'){
+      cost = 13500;
+    }else if(selectedPackage==='traditional'){
+      cost = 16500;
+    }else if(selectedPackage==='dynamic'){
+      cost=19500;
+    }
+
+    document.getElementById('costBDT').innerHTML = cost;
+  }
+
+  const handleCostComboPremium =()=>{
+    let selectedPackage = document.getElementById('premiumType').value;
+    let cost = 0;
+
+    if(selectedPackage==='elite'){
+      cost = 20500;
+    }else if(selectedPackage==='unique'){
+      cost = 24500;
+    }
+
+    document.getElementById('costBDT').innerHTML = cost;
+  }
+
+  const handleCostComboSignature =()=>{
+    let selectedPackage = document.getElementById('signatureType').value;
+    let cost = 0;
+
+    if(selectedPackage==='prestige'){
+      cost = 30500;
+    }else if(selectedPackage==='supreme'){
+      cost = 42500;
+    }
+
+    document.getElementById('costBDT').innerHTML = cost;
+  }
 
 
   const handleBookingForm = (event) => {
@@ -55,27 +125,28 @@ const Booking = () => {
     }
     console.log(bookedInfo);
 
-    fetch('http://localhost:5000/booking',{
+    fetch('http://localhost:5000/booking', {
       method: 'POST',
       headers: {
-        'content-type' : 'application/json'
+        'content-type': 'application/json'
       },
       body: JSON.stringify(bookedInfo)
     })
-    .then(res=>res.json())
-    .then(data=>{
-      if (data.insertedId) {
-        Swal.fire({
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          Swal.fire({
             title: 'Success',
-            text: 'You have booked successfully',
+            text: 'You have booked successfully.',
             icon: 'success',
-            confirmButtonText: 'Done'
-        })
-    }
-    })
+            confirmButtonText: 'Done',
+            footer: 'Contact us before confirm booking.'
+          })
+        }
+      })
   }
 
-  
+
   return (
     <div>
       <div className="text-center mt-14">
@@ -147,7 +218,7 @@ const Booking = () => {
           {selectedService === 'photography' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Photography Package</label>
-              <select
+              <select  onChange={handleCostPhoto}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="photographyPackage" name="photographyPackage"
               >
@@ -162,7 +233,7 @@ const Booking = () => {
           {selectedService === 'cinematography' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Cinematography Package</label>
-              <select
+              <select onChange={handleCostCinema}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="cinematographyPackage" name="cinematographyPackage"
               >
@@ -194,7 +265,7 @@ const Booking = () => {
           {selectedComboPackage === 'standard' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Standard sub-package</label>
-              <select
+              <select onChange={handleCostComboStandard}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="standardType" name="standardType"
               >
@@ -209,7 +280,7 @@ const Booking = () => {
           {selectedComboPackage === 'premium' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Premium sub-package</label>
-              <select
+              <select onChange={handleCostComboPremium}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="premiumType" name="premiumType"
               >
@@ -223,7 +294,7 @@ const Booking = () => {
           {selectedComboPackage === 'signature' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Signature sub-package</label>
-              <select
+              <select onChange={handleCostComboSignature}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="signatureType" name="signatureType"
               >
@@ -233,6 +304,11 @@ const Booking = () => {
             </div>
           )}
 
+
+          <label className="block text-gray-700 font-bold mb-4">
+            Costs : <span className="text-lg font-bold text-orange-600">
+              <span id="costBDT"></span> BDT</span>
+          </label>
 
 
           <div className="mb-4">
