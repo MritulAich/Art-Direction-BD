@@ -45,8 +45,8 @@ const Gallery = () => {
 
     return (
             <div>
-                <h2 className="text-3xl scroll-smooth divider italic text-center my-8">Photographs</h2>
-                <label className="input input-bordered flex items-center w-[400px] gap-2 my-6 mx-auto ml-12">
+                <h2 className="lg:text-3xl md:text-3xl text-xl scroll-smooth divider italic text-center my-8">Photographs</h2>
+                <label className="input flex items-center lg:w-[400px] md:w-[400px] gap-2 my-6 mx-auto lg:ml-12 md:ml-12">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 16 16"
@@ -98,12 +98,12 @@ const Gallery = () => {
                 </h4>
             
                 {/* Films */}
-                <h2 className="text-3xl divider italic font-medium text-center mt-24 mb-12">Films</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 m-4 mb-24 gap-8">
-                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/9CrgdAjeuto?si=PRBpG_lLGgix7g0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/oYeIobciLjQ?si=do6CHQPvdYgsLQHu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>               
-                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/sx00dlkf_TY?si=1HfqrK9NSQn02ljm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                 <iframe className="w-[450px] md:w-[500px] lg:[500px] h-[315px]" src="https://www.youtube.com/embed/t6yEyyrpfvI?si=cMUP25iyDmvPWGCN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <h2 className="lg:text-3xl md:text-2xl text-xl divider italic font-medium text-center mt-24 mb-12">Films</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 lg:m-4 md:m-2 m-1 mb-24 lg:gap-8 md:gap-6 gap-4">
+                 <iframe className="w-[312px] md:w-[500px] lg:[500px] lg:h-[315px] md:h-[315px] h-[220px]" src="https://www.youtube.com/embed/9CrgdAjeuto?si=PRBpG_lLGgix7g0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                 <iframe className="w-[312px] md:w-[500px] lg:[500px] lg:h-[315px] md:h-[315px] h-[220px]" src="https://www.youtube.com/embed/oYeIobciLjQ?si=do6CHQPvdYgsLQHu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>               
+                 <iframe className="w-[312px] md:w-[500px] lg:[500px] lg:h-[315px] md:h-[315px] h-[220px]" src="https://www.youtube.com/embed/sx00dlkf_TY?si=1HfqrK9NSQn02ljm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                 <iframe className="w-[312px] md:w-[500px] lg:[500px] lg:h-[315px] md:h-[315px] h-[220px]" src="https://www.youtube.com/embed/t6yEyyrpfvI?si=cMUP25iyDmvPWGCN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
 
                 <Helmet>

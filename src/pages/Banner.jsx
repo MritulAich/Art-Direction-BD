@@ -24,7 +24,7 @@ const Banner = () => {
                     }}>
 
                     <div className="absolute lg:mt-[8%] md:mt-[8%] lg:ml-[15%] md:ml-[15%] mt-[18%] ml-[4%] bg-gradient-to-b from-indigo-100 lg:p-4 md:p-2 p-2 rounded-xl">
-                        <h1 className="mb-4 lg:text-4xl md:text-3xl text-lg font-semibold text-cyan-950">Every wedding tells a story <br />we are here to document yours</h1>
+                        <h1 className="mb-4 lg:text-4xl md:text-2xl text-sm font-semibold text-cyan-950">Every wedding tells a story <br />we are here to document yours</h1>
                         <Link to='/booking' className="btn btn-primary">Book Now</Link>
                     </div>
                 </SwiperSlide>
@@ -35,7 +35,7 @@ const Banner = () => {
                         backgroundPosition: 'center'
                     }} >
 
-                    <h1 className='absolute lg:ml-[22%] md:ml-[22%] ml-[8%] mt-[24%] lg:mt-[8%] md:mt-[8%] lg:text-5xl md:text-3xl text-2xl poppins-regular text-yellow-100'>COLORFUL PHOTOS FOR COLORFUL PEOPLE</h1>
+                    <h1 className='absolute lg:ml-[22%] md:ml-[22%] ml-[8%] mt-[24%] lg:mt-[8%] md:mt-[8%] lg:text-5xl md:text-3xl poppins-regular text-yellow-100'>COLORFUL PHOTOS FOR COLORFUL PEOPLE</h1>
                 </SwiperSlide>
 
                 <SwiperSlide className='w-full carousel-item bg-contain bg-no-repeat'

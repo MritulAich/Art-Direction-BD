@@ -35,7 +35,7 @@ const Footer = () => {
             </svg>
           </Link>
         </nav>
-        <nav className="grid grid-flow-col text-lg gap-4 -mb-14">
+        <nav className="grid grid-flow-col lg:text-lg md:text-lg text-sm lg:gap-4 md:gap-4 -mb-14">
           <Link to='/' className="link link-hover">Home</Link>
           <Link to='/servicePeriod' className="link link-hover">Service period</Link>
           <Link to='/contact' className="link link-hover">Contact</Link>

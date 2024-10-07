@@ -12,14 +12,14 @@ const Newsletter = () => {
     }
 
     return (
-        <div className="card bg-none border-2 border-gray-600 mr-2 mb-2 w-96">
-            <div className="card-body text-center">
-                <h2 className="text-xl font-semibold">Stay up-to-date with the latest updates and offers</h2>
+        <div className="border-2 border-gray-600 mr-2 mb-2 rounded lg:w-96 md:w-96 w-72 ">
+            <div className="p-3 md:p-6 lg:p-8 text-center space-y-2">
+                <h2 className="lg:text-xl md:text-xl font-semibold">Stay up-to-date with the latest updates and offers</h2>
                 <form ref={formRef} className="join" onSubmit={handleSubscribe}>
                     <input
                         type="email" name="email"
                         placeholder="user@gmail.com"
-                        className="input input-bordered join-item text-black" required/>
+                        className="pl-1 -mr-4 join-item text-black" required/>
                     <button className="btn btn-secondary join-item">Subscribe</button>
                 </form>
             </div>

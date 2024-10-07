@@ -38,12 +38,12 @@ const Navbar = () => {
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-amber-400 rounded-box z-[1] mt-3 w-52 p-2">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-amber-400 rounded-box z-[1] mt-3 lg:w-52 md:w-52 w-28 p-2">
                         {Navlinks}
                     </ul>
                 </div>
 
-                <Link to='/' className="ml-10 text-5xl dancing-script-nameplate">Art Direction BD</Link>
+                <Link to='/' className="lg:ml-10 md:ml-10 ml-4 lg:text-5xl md:text-4xl text-3xl dancing-script-nameplate">Art Direction BD</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl gap-10">

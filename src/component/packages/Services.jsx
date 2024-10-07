@@ -13,31 +13,31 @@ const Services = () => {
             }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-neutral-content text-center">
-                <div className="lg:mb-[120px] md:mb-[80px]">
+                <div className="lg:mb-[120px] md:mb-[80px] mb-16">
                     <div>
-                        <h1 className="mb-3 text-5xl text-fuchsia-300">Art Direction BD</h1>
+                        <h1 className="mb-3 lg:text-5xl md:text-3xl text-2xl text-fuchsia-300">Art Direction BD</h1>
                         <small className="text-sm">PHOTOGRAPHY || CINEMATOGRAPHY || EVENT PLANNER</small>
                     </div>
 
-                    <p className="mt-20 mb-5 text-4xl font-semibold">Packages and Deals</p>
+                    <p className="lg:mt-20 md:mt-20 mt-12 mb-5 lg:text-4xl md:text-3xl text-xl font-semibold">Packages and Deals</p>
 
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
 
-                        <div class="w-96 bg-white border border-green-300 bg-opacity-10 py-5 gap-4 text-center flex flex-col items-center">
+                        <div class="lg:w-96 md:w-96 w-72 bg-white border border-green-300 bg-opacity-10 py-5 gap-4 text-center flex flex-col items-center">
                             <BsFillCameraFill className="text-4xl text-white" />
                             <h2 class="text-xl font-semibold text-white">Photography</h2>
                             <p>Freeze Every Memory</p>
                             <Link to='/photography' class="btn btn-warning">More</Link>
                         </div>
 
-                        <div class="w-96 bg-white border border-green-300 bg-opacity-10 py-5 gap-4 text-center flex flex-col items-center">
+                        <div class="lg:w-96 md:w-96 w-72 bg-white border border-green-300 bg-opacity-10 py-5 gap-4 text-center flex flex-col items-center">
                             <ImVideoCamera className="text-4xl text-white" />
                             <h2 class="text-xl font-semibold text-white">Cinematography</h2>
                             <p>Capturing Cinematic Magic</p>
                             <Link to='/cinematography' class="btn btn-warning">More</Link>
                         </div>
 
-                        <div class="w-96 bg-white border border-green-300 bg-opacity-20 py-5 gap-4 text-center flex flex-col items-center md:col-span-2 lg:col-span-1 md:mx-auto">
+                        <div class="lg:w-96 md:w-96 w-72 bg-white border border-green-300 bg-opacity-20 py-5 gap-4 text-center flex flex-col items-center md:col-span-2 lg:col-span-1 md:mx-auto">
                             <LiaPhotoVideoSolid className="text-4xl text-white" />
                             <h2 class="text-xl font-semibold text-white">Combo</h2>
                             <p>Crafting Visual Masterpieces</p>

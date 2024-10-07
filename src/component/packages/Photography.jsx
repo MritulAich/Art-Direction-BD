@@ -5,7 +5,7 @@ const Photography = () => {
     return (
         <div className="min-h-screen bg-gray-900 p-6 pt-16">
             <div className="text-center mb-12">
-                <h1 className="text-5xl text-fuchsia-300 mt-10 mb-3">Photography Packages</h1>
+                <h1 className="lg:text-5xl md:text-5xl text-3xl text-fuchsia-300 mt-10 mb-3">Photography Packages</h1>
                 <p className="text-sm text-white">Preserve your cherished moments with our professional photographers.</p>
             </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">

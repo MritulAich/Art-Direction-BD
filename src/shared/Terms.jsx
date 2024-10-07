@@ -6,7 +6,7 @@ const Terms = () => {
             <div className="divider"></div>
             <h1 className="text-3xl text-center">Terms & Conditions</h1>
             <div className="divider"></div>
-            <ul className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-1">
+            <ul className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-1 m-5">
                 <li><p>1. The amount in the contract paper is considered as final. There will be no discount/increment of price after finalizing the contract paper.</p></li>
                 <li><p>2. The client has to bear online transaction charges and EMI charges (if applicable).</p></li>
                 <li><p>3. The client will be served as per the contract paper. Nothing will be given extra or outside of the contract.</p></li>

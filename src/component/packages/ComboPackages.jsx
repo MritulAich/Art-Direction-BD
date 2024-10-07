@@ -8,15 +8,15 @@ const ComboPackages = () => {
         <div className="min-h-screen bg-gray-900 p-8">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-10">
-                    <h1 className="text-5xl text-fuchsia-300 mt-10 mb-3">Combo Packages</h1>
+                    <h1 className="lg:text-5xl md:text-5xl text-3xl text-fuchsia-300 mt-10 mb-3">Combo Packages</h1>
                     <p className="text-sm text-white">A perfect blend of photography and cinematography for your special moments.</p>
                 </div>
 
-                <Tabs className="bg-white bg-opacity-20 rounded-lg p-6">
+                <Tabs className="bg-white bg-opacity-20 rounded-lg lg:p-6 md:p-6 p-3">
                     <TabList className="flex justify-center text-neutral-content mb-6 tabs tabs-lifted">
-                        <Tab className="px-4 text-white py-2 text-xl focus:outline-none focus:font-medium tab">Standard</Tab>
-                        <Tab className="px-4 text-white py-2 text-xl focus:outline-none focus:font-medium tab">Premium</Tab>
-                        <Tab className="px-4 text-white py-2 text-xl focus:outline-none focus:font-medium tab">Signature</Tab>
+                        <Tab className="px-4 text-white py-2 lg:text-xl md:text-xl text-sm focus:outline-none focus:font-medium tab">Standard</Tab>
+                        <Tab className="px-4 text-white py-2 lg:text-xl md:text-xl text-sm focus:outline-none focus:font-medium tab">Premium</Tab>
+                        <Tab className="px-4 text-white py-2 lg:text-xl md:text-xl text-sm focus:outline-none focus:font-medium tab">Signature</Tab>
                     </TabList>
 
 

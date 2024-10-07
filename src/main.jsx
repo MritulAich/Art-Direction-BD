@@ -97,7 +97,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        <div className="bg-gradient-to-b from-[#FFE4C4] to-[#FEB47B]">
+        <div className="bg-gradient-to-b from-[#FFE4C4] to-[#ffc69b]">
           <RouterProvider router={router} />
         </div>
       </QueryClientProvider>

@@ -20,7 +20,7 @@ const ServicePeriod = () => {
             <div className="divider mt-12"></div>
             <h1 className="text-3xl text-center mb-8">Payments FAQ</h1>
 
-            <div className="container flex flex-col justify-center text-lg mx-auto">
+            <div className="container flex flex-col justify-center text-lg mx-auto mb-5">
                 <div>
                     <details className="border border-gray-700">
                         <summary className="py-4 pl-1">What is the payment policy for booking an event?</summary>

@@ -154,7 +154,7 @@ const Booking = () => {
   return (
     <div>
       <div className="text-center mt-14">
-        <h3 className="lg:text-xl text-lg type-writer ">We Offer You Best Service In Best Price. You Have The Opportunity To Customize The Packages As You Want.</h3>
+        <h3 className="lg:text-xl text-lg type-writer lg:overflow-x-hidden overflow-x-clip">We Offer You Best Service In Best Price. <br />Customize The Packages As You Want.</h3>
       </div>
 
       <div className="max-w-md lg:max-w-lg md:max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
