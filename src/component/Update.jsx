@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
+  const navigate = useNavigate();
 
-    const [selectedService, setSelectedService] = useState('');
+  const [selectedService, setSelectedService] = useState('');
   const [selectedComboPackage, setSelectedComboPackage] = useState('');
 
   const handleServiceChange = (event) => {
@@ -15,18 +17,18 @@ const Update = () => {
     setSelectedComboPackage(event.target.value);
   };
 
-    const booking = useLoaderData();
-    const {_id, phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType} = booking;
+  const booking = useLoaderData();
+  const { _id, phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType } = booking;
 
-    const handleUpdatePage = event =>{
-        event.preventDefault();
-        const form = event.target;
-        const phone = form.phone.value;
-        const date = form.date.value;
-        const time = form.time.value;
-        const service = form.service.value;
-        
-        let photographyPackage = '';
+  const handleUpdatePage = event => {
+    event.preventDefault();
+    const form = event.target;
+    const phone = form.phone.value;
+    const date = form.date.value;
+    const time = form.time.value;
+    const service = form.service.value;
+
+    let photographyPackage = '';
     let cinematographyPackage = '';
     let comboPackage = '';
     let standardType = '';
@@ -48,33 +50,34 @@ const Update = () => {
       }
     }
 
-        const updatedPage = {phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType};
+    const updatedPage = { phone, date, time, service, photographyPackage, cinematographyPackage, comboPackage, standardType, premiumType, signatureType };
 
-        fetch(`http://localhost:5000/booking/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedPage)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        title: 'Success',
-                        text: 'This booking updated successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Done'
-                    })
-                }
-            })
-    }
+    fetch(`https://art-direction-bd-server.vercel.app/booking/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedPage)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: 'Success',
+            text: 'This booking updated successfully',
+            icon: 'success',
+            confirmButtonText: 'Done'
+          });
+          navigate('/clientPortal');
+        }
+      })
+  }
 
 
-    return (
-        <div>
-      <div className="max-w-md lg:max-w-lg md:max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+  return (
+    <div>
+      <div className="max-w-md lg:max-w-lg md:max-w-lg mx-auto mt-10 mb-28 bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="text-2xl py-4 px-6 bg-gray-800 text-white text-center font-bold">Update Booking</div>
 
         <form onSubmit={handleUpdatePage} className="py-4 px-6">
@@ -211,8 +214,11 @@ const Update = () => {
         </form>
 
       </div>
+      <Helmet>
+        <title>Update Booking</title>
+      </Helmet>
     </div>
-    );
+  );
 };
 
 export default Update;

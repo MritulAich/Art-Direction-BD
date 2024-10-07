@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Cinematography = () => {
     return (
         <div className="min-h-screen bg-gray-900 p-6 pt-16">
+            
             <div className="text-center mb-10">
                 <h1 className="text-5xl text-fuchsia-300 mt-10 mb-3">Cinematography Packages</h1>
                 <p className="text-sm text-white">Capture the essence of your story with our expert cinematographers.</p>
@@ -66,6 +68,10 @@ const Cinematography = () => {
                     <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
             </div>
+
+            <Helmet>
+                <title>Cinematography Packages</title>
+            </Helmet>
         </div>
     );
 };

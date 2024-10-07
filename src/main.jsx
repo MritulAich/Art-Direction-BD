@@ -59,7 +59,6 @@ const router = createBrowserRouter([
       {
         path: '/booking',
         element: <PrivateRoute><Booking></Booking></PrivateRoute>
-        // element: <Booking></Booking>
       },
       {
         path: '/signUp',
@@ -70,13 +69,13 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path:'/clientPortal',
-        element:<PrivateRoute><ClientPortal></ClientPortal></PrivateRoute>
+        path: '/clientPortal',
+        element: <PrivateRoute><ClientPortal></ClientPortal></PrivateRoute>
       },
       {
-        path:'/update/:id',
-        element:<Update></Update>,
-        loader: ({params})=>fetch(`http://localhost:5000/booking/${params.id}`)
+        path: '/update/:id',
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://art-direction-bd-server.vercel.app/booking/${params.id}`)
       },
       {
         path: '/contact',
@@ -98,7 +97,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <div className="bg-gradient-to-b from-[#FFE4C4] to-[#FEB47B]">
+          <RouterProvider router={router} />
+        </div>
       </QueryClientProvider>
     </AuthProvider>
   </StrictMode>,

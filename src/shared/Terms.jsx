@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 
 const Terms = () => {
     return (
@@ -17,6 +18,10 @@ const Terms = () => {
                 <li><p>9. Art Direction BD is not bound to publish pictures on their FB page.</p></li>
                 <li><p>10. A client must ensure a smooth working environment for good quality output, otherwise, Art Direction BD will not be liable for failing to provide satisfactory delivery.</p></li>
             </ul>
+
+            <Helmet>
+                <title>Terms & Conditions</title>
+            </Helmet>
         </div>
     );
 };

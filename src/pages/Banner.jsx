@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <Swiper className="carousel w-screen lg:h-screen h-[500px] text-center lg:m-6 md:m-3"
                 spaceBetween={0} effect={'fade'} navigation={true} speed={1000} fadeEffect={{ crossFade: true }}
                 pagination={{

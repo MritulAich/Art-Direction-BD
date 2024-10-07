@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const ComboPackages = () => {
     return (
@@ -152,6 +153,9 @@ const ComboPackages = () => {
                     </TabPanel>
                 </Tabs>
             </div>
+            <Helmet>
+                <title>Combo Packages</title>
+            </Helmet>
         </div>
     );
 };

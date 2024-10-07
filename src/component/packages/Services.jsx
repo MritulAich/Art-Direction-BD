@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { BsFillCameraFill } from "react-icons/bs";
 import { ImVideoCamera } from "react-icons/im";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
@@ -45,6 +46,9 @@ const Services = () => {
                     </div>
                 </div>
             </div>
+            <Helmet>
+                <title>Services</title>
+            </Helmet>
         </div>
     );
 };

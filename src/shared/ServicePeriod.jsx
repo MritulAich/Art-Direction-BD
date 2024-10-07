@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 
 const ServicePeriod = () => {
     return (
@@ -17,12 +18,27 @@ const ServicePeriod = () => {
             </div>
 
             <div className="divider mt-12"></div>
-            <h1 className="text-3xl text-center">Payments</h1>
-            <div className="divider"></div>
-            <div className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-1">
-                <p>1. Minimum <span className="text-black font-medium">80%</span> payment must be cleared before event dates.</p>
-                <p>2. Due payment must be cleared at the time of Raw/Edit delivery.</p>
-            </div>    
+            <h1 className="text-3xl text-center mb-8">Payments FAQ</h1>
+
+            <div className="container flex flex-col justify-center text-lg mx-auto">
+                <div>
+                    <details className="border border-gray-700">
+                        <summary className="py-4 pl-1">What is the payment policy for booking an event?</summary>
+                        <p className="py-4 pt-0 ml-4 -mt-4">Minimum <span className="text-black font-medium">80%</span> payment must be cleared before event dates.</p>
+                    </details>
+                    <details className="border border-gray-700 border-y-0">
+                        <summary className="py-4 pl-1">When do I have to complete remaining payment?</summary>
+                        <p className="py-6 pt-0 ml-4 -mt-4">Due payment must be cleared at the time of Raw/Edit delivery.</p>
+                    </details>
+                    <details className="border border-gray-700">
+                        <summary className="py-4 pl-1">Can I make partial payments after the event?</summary>
+                        <p className="py-6 pt-0 ml-4 -mt-4">Partial payments are not allowed after the event. The full remaining balance must be settled at the time of delivery.</p>
+                    </details>
+                </div>
+            </div>
+            <Helmet>
+                <title>Service Period</title>
+            </Helmet>
         </div>
     );
 };

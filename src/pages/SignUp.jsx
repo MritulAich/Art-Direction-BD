@@ -38,7 +38,7 @@ const SignUp = () => {
                 <title>Sign Up</title>
             </Helmet>
         
-        <div className="flex flex-col justify-center items-center my-16">
+        <div className="flex flex-col justify-center items-center mt-16 mb-28">
             <div className="w-full max-w-md lg:max-w-lg p-4 rounded-md shadow sm:p-8 bg-gray-50 text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Registration</h2>
 

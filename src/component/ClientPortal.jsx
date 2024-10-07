@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ClientPortal = () => {
     const { user } = useContext(AuthContext);
@@ -11,7 +12,7 @@ const ClientPortal = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/booking?email=${user.email}`)
+            fetch(`https://art-direction-bd-server.vercel.app/booking?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setBooking(data))
         }
@@ -29,7 +30,7 @@ const ClientPortal = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/booking/${_id}`, {
+                fetch(`https://art-direction-bd-server.vercel.app/booking/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -51,7 +52,7 @@ const ClientPortal = () => {
 
 
     return (
-        <div className="text-right flex flex-col items-end lg:mr-40">
+        <div className="text-right min-h-screen flex flex-col items-end lg:mr-40">
             <h3 className="text-2xl m-5 mb-0">🤗Welcome {user?.displayName}</h3>
             <h2 className="text-lg m-5 mt-0">We are pleased to have you onboard.</h2>
 
@@ -94,6 +95,10 @@ const ClientPortal = () => {
                 </table>
 
             </div>
+
+            <Helmet>
+                <title>Client Portal</title>
+            </Helmet>
         </div >
     );
 };

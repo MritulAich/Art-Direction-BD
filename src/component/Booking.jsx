@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
@@ -23,66 +24,66 @@ const Booking = () => {
   const handleCostPhoto = () => {
     let selectedPackage = document.getElementById('photographyPackage').value;
     let cost = 0;
-    if(selectedPackage === 'primary'){
+    if (selectedPackage === 'primary') {
       cost = 5500;
-    }else if(selectedPackage === 'standard'){
+    } else if (selectedPackage === 'standard') {
       cost = 8500;
-    }else if(selectedPackage === 'premium'){
+    } else if (selectedPackage === 'premium') {
       cost = 13500;
     }
     document.getElementById('costBDT').innerHTML = cost
   }
 
-  const handleCostCinema =()=>{
+  const handleCostCinema = () => {
     let selectedPackage = document.getElementById('cinematographyPackage').value;
     let cost = 0;
 
-    if(selectedPackage==='primary'){
+    if (selectedPackage === 'primary') {
       cost = 5500;
-    }else if(selectedPackage==='standard'){
+    } else if (selectedPackage === 'standard') {
       cost = 10500;
-    }else if(selectedPackage==='premium'){
-      cost=16500;
+    } else if (selectedPackage === 'premium') {
+      cost = 16500;
     }
 
     document.getElementById('costBDT').innerHTML = cost;
   }
 
-  const handleCostComboStandard =()=>{
+  const handleCostComboStandard = () => {
     let selectedPackage = document.getElementById('standardType').value;
     let cost = 0;
 
-    if(selectedPackage==='classic'){
+    if (selectedPackage === 'classic') {
       cost = 13500;
-    }else if(selectedPackage==='traditional'){
+    } else if (selectedPackage === 'traditional') {
       cost = 16500;
-    }else if(selectedPackage==='dynamic'){
-      cost=19500;
+    } else if (selectedPackage === 'dynamic') {
+      cost = 19500;
     }
 
     document.getElementById('costBDT').innerHTML = cost;
   }
 
-  const handleCostComboPremium =()=>{
+  const handleCostComboPremium = () => {
     let selectedPackage = document.getElementById('premiumType').value;
     let cost = 0;
 
-    if(selectedPackage==='elite'){
+    if (selectedPackage === 'elite') {
       cost = 20500;
-    }else if(selectedPackage==='unique'){
+    } else if (selectedPackage === 'unique') {
       cost = 24500;
     }
 
     document.getElementById('costBDT').innerHTML = cost;
   }
 
-  const handleCostComboSignature =()=>{
+  const handleCostComboSignature = () => {
     let selectedPackage = document.getElementById('signatureType').value;
     let cost = 0;
 
-    if(selectedPackage==='prestige'){
+    if (selectedPackage === 'prestige') {
       cost = 30500;
-    }else if(selectedPackage==='supreme'){
+    } else if (selectedPackage === 'supreme') {
       cost = 42500;
     }
 
@@ -127,7 +128,7 @@ const Booking = () => {
     }
     console.log(bookedInfo);
 
-    fetch('http://localhost:5000/booking', {
+    fetch('https://art-direction-bd-server.vercel.app/booking', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -221,7 +222,7 @@ const Booking = () => {
           {selectedService === 'photography' && (
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Select Photography Package</label>
-              <select  onChange={handleCostPhoto}
+              <select onChange={handleCostPhoto}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="photographyPackage" name="photographyPackage"
               >
@@ -335,20 +336,24 @@ const Booking = () => {
       </div>
 
       <div className="divider mt-12"></div>
-            <h1 className="text-3xl ml-5 underline">Add-Ons :</h1>
-            <div className="divider"></div>
-            <ul className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-2 mb-6">
-                <li><p>1. Extra hour cost 1,000/- per person.</p></li>
-                <li><p>2. Extra Photographer or Extra Cinematographer cost 5,000/- per person.</p></li>
-                <li><p>3. Drone cost 5,000/- for 2hours.</p></li>
-                <li><p>4. Pre/Post Wedding Photo-shoot of 2 hours by 1 Senior Photographer cost 5,500/-</p></li>
-                <li><p>5. Pre/Post Wedding Cinematography of 2 hours by 1 Senior Cinematographer cost 6,500/-</p></li>
-                <li><p>6. Premium Photo-book of 10 Pages cost: 3,000/-</p></li>
-                <li><p>7. Premium Photo-book of 12 Pages cost: 3,500/-</p></li>
-                <li><p>8. Premium Photo-book of 15 Pages cost: 4,500/-</p></li>
-                <li><p>9. Premium Photo-book of 20 Pages cost: 6,000/-</p></li>
-                <li><p>10. For outside of Chittagong city area client must provide transport & accommodation of team members.</p></li>
-            </ul>
+      <h1 className="text-3xl ml-5 underline">Add-Ons :</h1>
+      <div className="divider"></div>
+      <ul className="mx-3 lg:mx-10 lg:text-xl text-lg space-y-2 mb-6">
+        <li><p>1. Extra hour cost 1,000/- per person.</p></li>
+        <li><p>2. Extra Photographer or Extra Cinematographer cost 5,000/- per person.</p></li>
+        <li><p>3. Drone cost 5,000/- for 2hours.</p></li>
+        <li><p>4. Pre/Post Wedding Photo-shoot of 2 hours by 1 Senior Photographer cost 5,500/-</p></li>
+        <li><p>5. Pre/Post Wedding Cinematography of 2 hours by 1 Senior Cinematographer cost 6,500/-</p></li>
+        <li><p>6. Premium Photo-book of 10 Pages cost: 3,000/-</p></li>
+        <li><p>7. Premium Photo-book of 12 Pages cost: 3,500/-</p></li>
+        <li><p>8. Premium Photo-book of 15 Pages cost: 4,500/-</p></li>
+        <li><p>9. Premium Photo-book of 20 Pages cost: 6,000/-</p></li>
+        <li><p>10. For outside of Chittagong city area client must provide transport & accommodation of team members.</p></li>
+      </ul>
+
+      <Helmet>
+        <title>Booking</title>
+      </Helmet>
     </div>
   );
 };

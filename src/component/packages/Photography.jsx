@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Photography = () => {
@@ -45,8 +46,10 @@ const Photography = () => {
                     <Link to='/booking' className="btn btn-warning">Book Now</Link>
                 </div>
             </div>
+            <Helmet>
+                <title>Photography Packages</title>
+            </Helmet>
         </div>
-
     );
 };
 
